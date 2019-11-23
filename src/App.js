@@ -21,15 +21,13 @@ class App extends React.Component {
     // 	score: this.state.score + 1
     // })
     this.setState(prevState => {
-      console.log(prevState)
-      prevState.players.map((e) => {
+      const players = [...prevState.players];
+      players.forEach((e,i) => {
         if(e.id === id) {
-          return e.score = e.score + 1;
+          e.score = e.score + 1
         }
-        return prevState
       })
-      console.log(prevState)
-      // return {players: prevState}
+      return { players }
     })
   }
 
